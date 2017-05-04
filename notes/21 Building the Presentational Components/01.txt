@@ -1,3 +1,7 @@
+Output the Book title and price to the page
+
+-----------------------------------
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
