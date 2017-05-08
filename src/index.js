@@ -8,20 +8,31 @@ const Book = ({ book }) => (
 		{book.title} -- {book.price}
 	</li>
 
-
 	)
 
-const Booklist = (props) => (
-	<ul>
-		{props.books.map(book => {
-			return (
-				<Book key={book.id} book={book} />
-			);
-		})}
-	</ul>
-	);
+class Booklist extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { books: this.props.books };
+	}
+	render() {
+		return (
+			<ul>
+				{this.state.books.map(book => {
+				return (
+					<Book key={book.id} book={book} />
+				);
+				})}
+			</ul>
+		);
+	}
+}
 
 ReactDOM.render(
   <Booklist books={data.books} />,
+ 
   document.getElementById('root')
 );
+
+
+
